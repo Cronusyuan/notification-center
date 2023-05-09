@@ -5,6 +5,7 @@ import { stubMessage } from "./stub/stubMessage";
 import { NotificationEvent, PREFERRED_TYPES } from "./types";
 import { userPreference } from "./user-preference";
 import { sendEmail } from "./ses/sendEmail";
+import { sendMessage } from "./discord/sendMessage";
 
 export const handler = async (event: SQSEvent): Promise<void> => {
   try {
@@ -32,7 +33,11 @@ export const handler = async (event: SQSEvent): Promise<void> => {
           case PREFERRED_TYPES.TELEGRAM:
             return Promise.resolve();
           case PREFERRED_TYPES.DISCORD:
-            return Promise.resolve();
+            return sendMessage(
+              config,
+              preference.notificationTarget,
+              event.content
+            );
         }
       })
     );

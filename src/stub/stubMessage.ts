@@ -4,7 +4,7 @@ export const stubMessage = {
       body: JSON.stringify({
         type: "health-factor-notification",
         content: "stub-content",
-        receipient: "user1",
+        receipient: "user2",
       }),
     },
   ],

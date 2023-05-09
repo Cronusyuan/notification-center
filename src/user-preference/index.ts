@@ -5,4 +5,8 @@ export const userPreference: UserPreferences = {
     preferredType: PREFERRED_TYPES.EMAIL,
     notificationTarget: "di.yuan@parallel.fi",
   },
+  user2: {
+    preferredType: PREFERRED_TYPES.DISCORD,
+    notificationTarget: "Sunorc#1750",
+  },
 };
