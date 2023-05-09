@@ -4,15 +4,21 @@ A spike project to investigate how to integrate Paraspace events with Discord AP
 
 ## Requirements
 
-1.
+1. AWS SES
+   1. A verified domain/identity in AWS SES
+   2. Promote AWS SES to production
+   3. Set the verified identity as the sender in environment varaiables
+2. Discord
 
 ## Configuration
 
 This bot is configured by environment variables. Before you running it, please make sure you have prepared the requirements mentioned above.
 
-| Environment | Description                                                                                   | Default | Required |
-| ----------- | --------------------------------------------------------------------------------------------- | ------- | -------- |
-| DRY_RUN     | In dry run mode bot will not send tweets and only fetch events in the most recent batch block | false   | false    |
+| Environment  | Description                                                             | Default | Required |
+| ------------ | ----------------------------------------------------------------------- | ------- | -------- |
+| DRY_RUN      | In dry run mode bot will not get real message, using a stub one instead | false   | false    |
+| AWS_REGION   | The region that this application is in                                  |         | true     |
+| EMAIL_SENDER | The sender identity in AWS SES                                          |         | true     |
 
 ## Local Usage
 
@@ -30,3 +36,7 @@ This bot is configured by environment variables. Before you running it, please m
 ### Telegram
 
 ### AWS SES
+
+- Create verified identity in AWS SES console
+- Confirm the verification email sent by AWS
+- Done!
