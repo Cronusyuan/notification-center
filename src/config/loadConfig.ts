@@ -9,12 +9,14 @@ export const loadConfig = (): Config => {
   const awsRegion = process.env.AWS_REGION;
   const emailSender = process.env.EMAIL_SENDER;
   const discordBotToken = process.env.DISCORD_BOT_TOKEN;
-  if (awsRegion && emailSender && discordBotToken) {
+  const telegramBotToken = process.env.TELEGRAM_BOT_TOKEN;
+  if (awsRegion && emailSender && discordBotToken && telegramBotToken) {
     return {
       dryRun,
       awsRegion,
       emailSender,
       discordBotToken,
+      telegramBotToken,
     };
   }
   throw Error("Some environment variables are missing.");

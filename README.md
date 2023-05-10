@@ -17,12 +17,13 @@ A spike project to investigate how to integrate Paraspace events with Discord AP
 
 This bot is configured by environment variables. Before you running it, please make sure you have prepared the requirements mentioned above.
 
-| Environment       | Description                                                             | Default | Required |
-| ----------------- | ----------------------------------------------------------------------- | ------- | -------- |
-| DRY_RUN           | In dry run mode bot will not get real message, using a stub one instead | false   | false    |
-| AWS_REGION        | The region that this application is in                                  |         | true     |
-| EMAIL_SENDER      | The sender identity in AWS SES                                          |         | true     |
-| DISCORD_BOT_TOKEN | The token of the discord bot                                            |         | true     |
+| Environment        | Description                                                             | Default | Required |
+| ------------------ | ----------------------------------------------------------------------- | ------- | -------- |
+| DRY_RUN            | In dry run mode bot will not get real message, using a stub one instead | false   | false    |
+| AWS_REGION         | The region that this application is in                                  |         | true     |
+| EMAIL_SENDER       | The sender identity in AWS SES                                          |         | true     |
+| DISCORD_BOT_TOKEN  | The token of the discord bot                                            |         | true     |
+| TELEGRAM_BOT_TOKEN | The token of the telegram bot                                           |         | true     |
 
 ## Local Usage
 

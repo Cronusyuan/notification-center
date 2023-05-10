@@ -3,4 +3,5 @@ export type Config = {
   awsRegion: string;
   emailSender: string;
   discordBotToken: string;
+  telegramBotToken: string;
 };
