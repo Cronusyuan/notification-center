@@ -7,6 +7,6 @@ export const userPreference: UserPreferences = {
   },
   user2: {
     preferredType: PREFERRED_TYPES.DISCORD,
-    notificationTarget: "Sunorc#1750",
+    notificationTarget: "427072379378991104",
   },
 };
