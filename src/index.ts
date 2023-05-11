@@ -6,6 +6,7 @@ import { NotificationEvent, PREFERRED_TYPES } from "./types";
 import { userPreference } from "./user-preference";
 import { sendEmail } from "./ses/sendEmail";
 import { sendMessage } from "./discord/sendMessage";
+import { sendTelegramMessage } from "./telegram/sendTelegramMessage";
 
 export const handler = async (event: SQSEvent): Promise<void> => {
   try {
@@ -31,7 +32,11 @@ export const handler = async (event: SQSEvent): Promise<void> => {
               event.content
             );
           case PREFERRED_TYPES.TELEGRAM:
-            return Promise.resolve();
+            return sendTelegramMessage(
+              config,
+              preference.notificationTarget,
+              event.content
+            );
           case PREFERRED_TYPES.DISCORD:
             return sendMessage(
               config,

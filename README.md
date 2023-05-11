@@ -12,6 +12,9 @@ A spike project to investigate how to integrate Paraspace events with Discord AP
    1. A Discord Bot created in Discord Develooper Portal
    2. Install the bot to your expected channel
    3. Set the bot's token in environment variables
+3. Telegram
+   1. A Telegram Bot created in Telegram @BotFather chat
+   2. Set the bot's token in environment variables
 
 ## Configuration
 

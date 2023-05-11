@@ -4,11 +4,11 @@ import logger from "../logger";
 
 export const sendTelegramMessage = async (
   config: Config,
-  id: string,
+  chatId: string,
   message: string
 ) => {
   const bot = new Telegraf(config.telegramBotToken);
-  logger.info(`Sending Telegram message to ${id}`);
-  await bot.telegram.sendMessage(id, message);
+  logger.info(`Sending Telegram message to ${chatId}`);
+  await bot.telegram.sendMessage(parseInt(chatId), message);
   logger.info("Sent successfully");
 };

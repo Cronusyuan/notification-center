@@ -9,4 +9,8 @@ export const userPreference: UserPreferences = {
     preferredType: PREFERRED_TYPES.DISCORD,
     notificationTarget: "427072379378991104",
   },
+  user3: {
+    preferredType: PREFERRED_TYPES.TELEGRAM,
+    notificationTarget: "1935900162",
+  },
 };
