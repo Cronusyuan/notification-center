@@ -2,6 +2,11 @@
 
 A spike project to investigate how to integrate Paraspace events with Discord API/ Telegram API/ Email
 
+This spike is based on the assumptions that:
+
+1. All notification events are from a SQS queue that sent by a upstream service
+2. The notified user's notification perference(Email|Discord|Telegram) and notified account information(Email address|Discord account ID|Telegram chat ID) can be fetched from other place.
+
 ## Requirements
 
 1. AWS SES
@@ -41,10 +46,36 @@ This bot is configured by environment variables. Before you running it, please m
 
 ### AWS SES
 
-- Create verified identity in AWS SES console
-- Confirm the verification email sent by AWS
+- Login to [AWS SES console](https://console.aws.amazon.com/ses)
+- Go to `Verified Identities` tab
+- Click `Create identity`
+- Choose `Email address` as identity type
+- Input your email address that will be used as the sender
+- Click `Create identity` button
+- Go to your email inbox and click the link in the email to verify it
+- Set the sender's email address to `EMAIL_SENDER` environment variable
 - Done!
 
 ### Discord
 
+- Login to Discord and go to [Discord Developer Portal](https://discord.com/developers/applications)
+- Click `New Application` to create the App that you will use to manage the Discord Bot
+- Go to `Bot` tab
+- Give the bot a meaningful username / icon
+- Click `Reset Token` and save the Bot's token
+- Go to `OAuth2/URL Generator` tab
+- Click `bot` checkbox and then click `Send Messages` & `Send TTS Messages` in the following checkbox
+- Copy the generated URL in the bottom and go to this link
+- The link will direct you to a page to install the Bot to a Discord server that you own
+- Confirm it
+- Set the Bot's token to `DISCORD_BOT_TOKEN` environment variable
+- Done!
+
 ### Telegram
+
+- Login to your Telegram account in any app
+- Contact the offcial @BotFather
+- Follow the instruction of @BotFather to create the Telegram Bot
+- Save the Bot's token
+- Set the Bot's token to `TELEGRAM_BOT_TOKEN` environment variable
+- Done!
